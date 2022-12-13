@@ -168,3 +168,8 @@ products[0].name = 'Risk';
 products.push({name:'Cards',price:5,ages:'18+'})
 
 console.log(products)
+
+//To remove things
+products.shift()
+
+console.log(products)
