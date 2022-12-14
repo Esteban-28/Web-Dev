@@ -193,3 +193,10 @@ for (let i = 0; i < passengers.length; i++){
     console.log(row[j]);
   }
 }
+
+//FOR...OF
+const subjects = ['math','english','science','spanish']
+
+for (let sub of subjects){
+  console.log(`I hate ${sub}`)
+}
