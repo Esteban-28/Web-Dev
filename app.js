@@ -129,47 +129,67 @@
 // airplaneSeats[3].splice(1,1,'Hugo')
 // console.log(airplaneSeats[3])
 
-//OBJECTS Demo
-const products = [
-  {
-    name:'Jenga',
-    price: 5,
-    ages: '5+'
-  },
-  {
-    name:'Domino',
-    price: 3.5,
-    ages: '10+'
-  },
-  {
-    name:'Ball',
-    type:{
-      football:{
-        price: 10
-      },
-      basketball:{
-        price: 12
-      },
-      baseball:{
-        price: 8
-      }
-    },
-    ages: '5+'
-  }
+// //OBJECTS Demo
+// const products = [
+//   {
+//     name:'Jenga',
+//     price: 5,
+//     ages: '5+'
+//   },
+//   {
+//     name:'Domino',
+//     price: 3.5,
+//     ages: '10+'
+//   },
+//   {
+//     name:'Ball',
+//     type:{
+//       football:{
+//         price: 10
+//       },
+//       basketball:{
+//         price: 12
+//       },
+//       baseball:{
+//         price: 8
+//       }
+//     },
+//     ages: '5+'
+//   }
+// ]
+
+// //Take info of an OBJECT
+// console.log(products[2].name + ' price is $'+products[2].type.football.price)
+
+// //To edit things
+// products[0].name = 'Risk';
+
+// //To add things
+// products.push({name:'Cards',price:5,ages:'18+'})
+
+// console.log(products)
+
+// //To remove things
+// products.shift()
+
+// console.log(products)
+
+// //LOOPS
+// for (let i = 1; i<=10; i++){
+//   console.log('Hello!!!')
+// }
+
+//NESTED FOR
+const passengers=[
+  ['Juan','David','Ignacio',null],
+  ['Karina','Rodrigo','Olivia','Sara'],
+  ['Gabriela','Alex','Dom','Lety']
 ]
 
-//Take info of an OBJECT
-console.log(products[2].name + ' price is $'+products[2].type.football.price)
-
-//To edit things
-products[0].name = 'Risk';
-
-//To add things
-products.push({name:'Cards',price:5,ages:'18+'})
-
-console.log(products)
-
-//To remove things
-products.shift()
-
-console.log(products)
+for (let i = 0; i < passengers.length; i++){
+  const row = passengers[i];
+  console.log(`Row #${i + 1}`);
+  for (let j = 0; j < row.length; j++){
+    console.log(row[j]);
+  }
+}
