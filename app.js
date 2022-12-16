@@ -179,24 +179,82 @@
 //   console.log('Hello!!!')
 // }
 
-//NESTED FOR
-const passengers=[
-  ['Juan','David','Ignacio',null],
-  ['Karina','Rodrigo','Olivia','Sara'],
-  ['Gabriela','Alex','Dom','Lety']
-]
+// //NESTED FOR
+// const passengers=[
+//   ['Juan','David','Ignacio',null],
+//   ['Karina','Rodrigo','Olivia','Sara'],
+//   ['Gabriela','Alex','Dom','Lety']
+// ]
 
-for (let i = 0; i < passengers.length; i++){
-  const row = passengers[i];
-  console.log(`Row #${i + 1}`);
-  for (let j = 0; j < row.length; j++){
-    console.log(row[j]);
+// for (let i = 0; i < passengers.length; i++){
+//   const row = passengers[i];
+//   console.log(`Row #${i + 1}`);
+//   for (let j = 0; j < row.length; j++){
+//     console.log(row[j]);
+//   }
+// }
+
+// //FOR...OF
+// const subjects = ['math','english','science','spanish']
+
+// for (let sub of subjects){
+//   console.log(`I hate ${sub}`)
+// }
+
+//FUNCTIONS
+function lastElement(arr){
+  if (arr.length === 0) {
+    return null;
   }
+  let num = arr.length - 1
+
+  return arr[num];
 }
 
-//FOR...OF
-const subjects = ['math','english','science','spanish']
+function capitalize(word) {
+  let newWord = word.slice(1,word.length)
 
-for (let sub of subjects){
-  console.log(`I hate ${sub}`)
+  return word[0].toUpperCase() + newWord
+}
+
+function sumArray(arr) {
+  let sum = 0;
+  for (let i of arr) {
+      sum += parseInt(i)
+  }
+  return sum
+}
+
+function returnDay(num){
+  if (num <= 0 || num > 7){
+    return null
+  }
+  switch (num) {
+      case 1:
+          // code
+          return 'Monday'
+          break;
+      case 2:
+          return 'Tuesday'
+          break;
+      case 3:
+          return 'Wednesday'
+          break;
+      case 4:
+          return 'Thursday'
+          break;
+      case 5:
+          return 'Friday'
+          break;
+      case 6:
+          return 'Saturday'
+          break;
+      case 7:
+          return 'Sunday'
+          break;
+      default:
+          // code
+          null
+          break;
+  }
 }
