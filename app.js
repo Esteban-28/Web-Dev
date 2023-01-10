@@ -1,3 +1,6 @@
+//SORRY FOR MY BAD ENGLISH, AS YOU CAN SEE IM NOT A NATIVE SPEAKER XD
+
+
 //AND operatior demostration 
 // const password = prompt('Write a password:')
 
@@ -202,59 +205,137 @@
 // }
 
 //FUNCTIONS
-function lastElement(arr){
-  if (arr.length === 0) {
-    return null;
-  }
-  let num = arr.length - 1
+// function lastElement(arr){
+//   if (arr.length === 0) {
+//     return null;
+//   }
+//   let num = arr.length - 1
 
-  return arr[num];
+//   return arr[num];
+// }
+
+// function capitalize(word) {
+//   let newWord = word.slice(1,word.length)
+
+//   return word[0].toUpperCase() + newWord
+// }
+
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let i of arr) {
+//       sum += parseInt(i)
+//   }
+//   return sum
+// }
+
+// function returnDay(num){
+//   if (num <= 0 || num > 7){
+//     return null
+//   }
+//   switch (num) {
+//       case 1:
+//           // code
+//           return 'Monday'
+//           break;
+//       case 2:
+//           return 'Tuesday'
+//           break;
+//       case 3:
+//           return 'Wednesday'
+//           break;
+//       case 4:
+//           return 'Thursday'
+//           break;
+//       case 5:
+//           return 'Friday'
+//           break;
+//       case 6:
+//           return 'Saturday'
+//           break;
+//       case 7:
+//           return 'Sunday'
+//           break;
+//       default:
+//           // code
+//           null
+//           break;
+//   }
+// }
+// // SCOPE
+// let champ = 'Ahri'
+
+// function change() {
+//   let champ = 'Zed'
+//   console.log(champ)
+// }
+
+// change()
+// console.log(champ)
+
+// //BLOCK SCOPE
+// //A block refers to the content inside the curly braces
+// let num = 8;
+
+// if(num > 0) {
+//   var pi = 3.14159; //this is the old version of a variable that we should not be using it, but it works
+//   let radius = 4;
+// }
+
+// console.log(num)
+// console.log(pi)
+// console.log(radius)
+
+//LEXICAL SCOPE
+
+function first(){
+  let sups = ['Spider-Man','Iron-Man','Thor']
+  function second(){
+    function third() {
+      for (hero of sups) {
+        console.log(`I love you ${hero}`)
+      }
+    }
+    third();
+  }
+  second();
 }
 
-function capitalize(word) {
-  let newWord = word.slice(1,word.length)
+//This works because the child functions can use the variables of the grand parent but not vice versa
 
-  return word[0].toUpperCase() + newWord
+let square = function (x) {
+  return Math.pow(x,2)
 }
 
-function sumArray(arr) {
-  let sum = 0;
-  for (let i of arr) {
-      sum += parseInt(i)
-  }
-  return sum
+//HIGH ORDER FUNCTIONS
+function printTwice(func){
+  func();
+  func();
 }
 
-function returnDay(num){
-  if (num <= 0 || num > 7){
-    return null
-  }
-  switch (num) {
-      case 1:
-          // code
-          return 'Monday'
-          break;
-      case 2:
-          return 'Tuesday'
-          break;
-      case 3:
-          return 'Wednesday'
-          break;
-      case 4:
-          return 'Thursday'
-          break;
-      case 5:
-          return 'Friday'
-          break;
-      case 6:
-          return 'Saturday'
-          break;
-      case 7:
-          return 'Sunday'
-          break;
-      default:
-          // code
-          null
-          break;
-  }
+function random(){
+ let rand = parseInt(Math.random() * 10 + 1)
+ console.log(rand) 
 }
+
+printTwice(random)
+
+//This will print 2 random numbers, calling a function with another function
+
+//RETURNING FUNCTIONS
+
+function makeBetween(min, max){
+ return function (x) {
+   x >= min && x <= max
+ }
+}
+
+const isChild = makeBetween(0, 18)
+const isAdult = makeBetween(19, 64)
+const isSenior = makeBetween(65,120)
+
+isChild(10) //true
+isChild(30) //false, and so on with the other variables
+
+//This can happen because we return a function with a function (the makeBetween function) and if we put the function (the makeBetween function) in a variable we can call the new variable with the returning function.
+//In less words, we can make a new function with a function.
+
